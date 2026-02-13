@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KodNest Design System</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .guide-section {
+            padding: 40px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .guide-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 24px;
+        }
+
+        .color-swatch {
+            height: 100px;
+            border: 1px solid var(--border-color);
+            margin-bottom: 8px;
+        }
+
+        .swatch-label {
+            font-size: 14px;
+            font-family: monospace;
+        }
+
+        .type-row {
+            margin-bottom: 24px;
+        }
+
+        .type-label {
+            display: block;
+            font-size: 12px;
+            color: #666;
+            margin-bottom: 4px;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="app-container">
+        <header class="top-bar">
+            <div class="project-name">KodNest Premium</div>
+            <div class="progress-indicator">Design System</div>
+            <div class="status-badge">Reference</div>
+        </header>
+
+        <main class="main-content">
+            <section class="context-header">
+                <h1>Style Guide</h1>
+                <p class="subtext">The fundamental elements that comprise the KodNest Premium aesthetic.</p>
+            </section>
+
+            <section class="guide-section">
+                <h2>Colors</h2>
+                <div class="guide-grid">
+                    <div>
+                        <div class="color-swatch" style="background-color: var(--bg-color);"></div>
+                        <div class="swatch-label">Background #F7F6F3</div>
+                    </div>
+                    <div>
+                        <div class="color-swatch" style="background-color: var(--text-primary);"></div>
+                        <div class="swatch-label">Primary Text #111111</div>
+                    </div>
+                    <div>
+                        <div class="color-swatch" style="background-color: var(--accent-color);"></div>
+                        <div class="swatch-label">Accent #8B0000</div>
+                    </div>
+                    <div>
+                        <div class="color-swatch" style="background-color: var(--border-color);"></div>
+                        <div class="swatch-label">Border #E0E0E0</div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="guide-section">
+                <h2>Typography</h2>
+                <div class="type-row">
+                    <span class="type-label">Heading 1 (Playfair Display 32px)</span>
+                    <h1>Calm, Intentional Design</h1>
+                </div>
+                <div class="type-row">
+                    <span class="type-label">Heading 2 (Playfair Display 24px)</span>
+                    <h2>Structured for Clarity</h2>
+                </div>
+                <div class="type-row">
+                    <span class="type-label">Heading 3 (Playfair Display 18px)</span>
+                    <h3>Component Hierarchy</h3>
+                </div>
+                <div class="type-row">
+                    <span class="type-label">Body (Inter 16px)</span>
+                    <p>The interface must feel like one mind designed it. No visual drift. Everything is intentional,
+                        coherent, and confident.</p>
+                </div>
+                <div class="type-row">
+                    <span class="type-label">Subtext (Inter 18px)</span>
+                    <p class="subtext">A subtle introduction to the content that follows.</p>
+                </div>
+            </section>
+
+            <section class="guide-section">
+                <h2>Buttons</h2>
+                <div class="action-row">
+                    <button class="btn btn-primary">Primary Action</button>
+                    <button class="btn btn-secondary">Secondary Action</button>
+                </div>
+            </section>
+
+            <section class="guide-section">
+                <h2>Inputs</h2>
+                <div style="max-width: 400px;">
+                    <div class="form-group">
+                        <label>Input Label</label>
+                        <input type="text" class="input-field" placeholder="Placeholder text...">
+                    </div>
+                    <div class="form-group">
+                        <label>Active Input</label>
+                        <input type="text" class="input-field" value="Filled content"
+                            style="border-color: var(--text-primary);">
+                    </div>
+                </div>
+            </section>
+
+            <section class="guide-section">
+                <h2>Cards</h2>
+                <div class="card" style="max-width: 400px;">
+                    <h2>Card Headling</h2>
+                    <p>Cards have a subtle border and no drop shadow. They are used to group related content.</p>
+                    <div class="action-row">
+                        <button class="btn btn-secondary">Card Action</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="guide-section">
+                <h2>Spacing Scale</h2>
+                <div style="display: flex; align-items: flex-end; gap: 10px;">
+                    <div style="width: 20px; background: #ddd; height: 8px;"></div> <span
+                        class="swatch-label">8px</span>
+                    <div style="width: 20px; background: #ddd; height: 16px;"></div> <span
+                        class="swatch-label">16px</span>
+                    <div style="width: 20px; background: #ddd; height: 24px;"></div> <span
+                        class="swatch-label">24px</span>
+                    <div style="width: 20px; background: #ddd; height: 40px;"></div> <span
+                        class="swatch-label">40px</span>
+                    <div style="width: 20px; background: #ddd; height: 64px;"></div> <span
+                        class="swatch-label">64px</span>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+
+</html>
