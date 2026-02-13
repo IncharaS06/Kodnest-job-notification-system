@@ -1,0 +1,304 @@
+:root {
+    /* Color System */
+    --bg-color: #F7F6F3;
+    --text-primary: #111111;
+    --accent-color: #8B0000;
+    --border-color: #E0E0E0;
+    --surface-color: #FFFFFF;
+    --success-color: #4CAF50; /* Muted green placeholder */
+    --warning-color: #FFC107; /* Muted amber placeholder */
+
+    /* Typography */
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Inter', sans-serif;
+
+    /* Spacing System */
+    --space-xs: 8px;
+    --space-sm: 16px;
+    --space-md: 24px;
+    --space-lg: 40px;
+    --space-xl: 64px;
+
+    /* Layout */
+    --max-text-width: 720px;
+    --header-height: 60px;
+    --footer-height: 50px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.app-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* Typography */
+h1, h2, h3 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    color: var(--text-primary);
+    line-height: 1.2;
+}
+
+h1 { font-size: 32px; margin-bottom: var(--space-xs); }
+h2 { font-size: 24px; margin-bottom: var(--space-sm); }
+h3 { font-size: 18px; margin-bottom: var(--space-xs); }
+
+p {
+    max-width: var(--max-text-width);
+    margin-bottom: var(--space-sm);
+}
+
+.subtext {
+    font-size: 18px;
+    color: #444; 
+    margin-bottom: 0;
+}
+
+/* Top Bar */
+.top-bar {
+    height: var(--header-height);
+    background-color: var(--surface-color);
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 var(--space-md);
+    flex-shrink: 0;
+}
+
+.project-name {
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.progress-indicator {
+    font-family: var(--font-heading);
+    font-style: italic;
+    font-size: 16px;
+}
+
+.status-badge {
+    font-size: 12px;
+    padding: 4px 8px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px; /* Consistent subtle rounding */
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    overflow-y: auto;
+    padding: var(--space-lg) var(--space-xl);
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* Context Header */
+.context-header {
+    margin-bottom: var(--space-lg);
+    border-bottom: 1px solid var(--border-color); /* Optional separation */
+    padding-bottom: var(--space-md);
+}
+
+/* Workspace Grid */
+.workspace-grid {
+    display: flex;
+    gap: var(--space-lg);
+    align-items: flex-start;
+}
+
+.primary-workspace {
+    flex: 7;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+}
+
+.secondary-panel {
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    background: #F2F1EE; /* Slightly darker than bg for subtle distinction */
+    padding: var(--space-md);
+    border: 1px solid var(--border-color);
+}
+
+/* Cards */
+.card {
+    background: var(--surface-color);
+    border: 1px solid var(--border-color);
+    padding: var(--space-md);
+    border-radius: 2px; /* Minimal radius */
+}
+
+/* Components */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    border-radius: 2px;
+    text-decoration: none;
+    line-height: 1;
+}
+
+.btn-primary {
+    background-color: var(--accent-color);
+    color: white;
+    border: 1px solid var(--accent-color);
+}
+
+.btn-primary:hover {
+    background-color: #660000; /* Darker red */
+    border-color: #660000;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--text-primary);
+    border: 1px solid var(--text-primary);
+}
+
+.btn-secondary:hover {
+    background-color: rgba(0,0,0,0.05);
+}
+
+.full-width {
+    width: 100%;
+}
+
+.flex-1 {
+    flex: 1;
+}
+
+.action-row {
+    display: flex;
+    gap: var(--space-sm);
+    margin-top: var(--space-md);
+}
+
+.panel-actions {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+}
+
+.feedback-actions {
+    display: flex;
+    gap: var(--space-sm);
+}
+
+/* Inputs */
+.form-group {
+    margin-bottom: var(--space-md);
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.input-field {
+    width: 100%;
+    padding: 10px 12px;
+    font-family: var(--font-body);
+    font-size: 14px;
+    border: 1px solid var(--border-color);
+    background-color: white;
+    border-radius: 2px;
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+.input-field:focus {
+    border-color: var(--text-primary);
+}
+
+textarea.input-field {
+    min-height: 100px;
+    resize: vertical;
+}
+
+/* Prompt Box */
+.prompt-box {
+    background: white;
+    border: 1px solid var(--border-color);
+    padding: var(--space-sm);
+}
+
+.prompt-box label {
+    display: block;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: #666;
+    margin-bottom: 4px;
+}
+
+.prompt-content {
+    font-family: monospace;
+    font-size: 13px;
+    color: #333;
+    line-height: 1.4;
+}
+
+/* Proof Footer */
+.proof-footer {
+    height: var(--footer-height);
+    background-color: var(--surface-color);
+    border-top: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-lg);
+    flex-shrink: 0;
+    font-size: 14px;
+}
+
+.proof-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.proof-item input[type="checkbox"] {
+    accent-color: var(--accent-color);
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+.proof-item label {
+    cursor: pointer;
+}
